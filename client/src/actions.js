@@ -14,8 +14,6 @@ const addDoc = async formData => {
 
     await newUser.save()
 
-    // await addToIndex(newUser)
-
     return {
       success: true,
       message: 'User created successfully',
@@ -31,9 +29,7 @@ const addDoc = async formData => {
 
 const deleteDoc = async id => {
   try {
-    const res = await User.deleteOne({ _id: id })
-
-    // deleteFromIndex(id)
+    await User.deleteOne({ _id: id })
 
     return {
       success: true,
@@ -107,10 +103,7 @@ const updateDoc = async (id, formData) => {
       password: formData.get('password'),
     }
 
-    // it is full document
-    const updatedData = await User.findByIdAndUpdate(id, data, { new: true })
-
-    // await updateIndex(updatedData)
+    await User.findByIdAndUpdate(id, data)
 
     return {
       success: true,

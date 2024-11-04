@@ -10,7 +10,6 @@ export default async function Home() {
     <div data-theme='dark' className=''>
       <Providers>
         <h2 className='text-2xl font-bold'>Welcome to Algolia Search Demo</h2>
-        <Search />
       </Providers>
     </div>
   )

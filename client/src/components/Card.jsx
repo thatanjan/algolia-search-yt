@@ -21,7 +21,7 @@ const Card = ({ hit }) => {
               Update
             </Link>
 
-            <form action={deleteDoc.bind(null, objectID)}>
+            <form>
               <button className='btn btn-error' type='submit'>
                 Delete
               </button>
