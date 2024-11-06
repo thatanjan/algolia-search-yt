@@ -39,3 +39,7 @@ const deleteFromIndex = async id => {
 changeStream.on('change', async data => {
   console.log(data)
 })
+
+app.listen(8000, () => {
+  console.log('Server running on port 8000')
+})
