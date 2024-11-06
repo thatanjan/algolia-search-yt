@@ -10,10 +10,13 @@ const Page = async ({ searchParams }) => {
   return (
     <div>
       <h2 className='text-2xl font-bold'>
-        {id && success ? 'Update User' : 'Create a new user'}
+        {id ? 'Update User' : 'Create a new user'}
       </h2>
 
-      <form className='flex flex-col gap-2'>
+      <form
+        className='flex flex-col gap-2'
+        action={id ? updateDoc.bind(null, id) : addDoc}
+      >
         <label className='form-control w-full max-w-xs'>
           <div className='label'>
             <span className='label-text'>What is your name?</span>
@@ -52,7 +55,7 @@ const Page = async ({ searchParams }) => {
         </label>
 
         <button className='btn btn-primary max-w-xs' type='submit'>
-          {id && success ? 'Update' : 'Create'}
+          {id ? 'Update' : 'Create'}
         </button>
       </form>
     </div>

@@ -13,7 +13,7 @@ const User = mongoose.model('User', new mongoose.Schema({}))
 
 const changeStream = User.watch()
 
-const USERS_INDEX = 'users_index'
+const USERS_INDEX = 'users_index_yt'
 
 const addToIndex = async data => {
   try {
@@ -38,8 +38,4 @@ const deleteFromIndex = async id => {
 
 changeStream.on('change', async data => {
   console.log(data)
-})
-
-app.listen(8000, () => {
-  console.log('Server is running on http://localhost:3000')
 })

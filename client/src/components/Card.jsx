@@ -1,4 +1,4 @@
-import { deleteDoc } from '@/actions'
+import { deleteDoc } from '@/actions/addDoc'
 import { Highlight } from 'react-instantsearch'
 import Link from 'next/link'
 
@@ -21,7 +21,7 @@ const Card = ({ hit }) => {
               Update
             </Link>
 
-            <form>
+            <form action={deleteDoc.bind(null, objectID)}>
               <button className='btn btn-error' type='submit'>
                 Delete
               </button>
