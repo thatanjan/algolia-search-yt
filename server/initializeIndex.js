@@ -17,12 +17,7 @@ const processRecords = async () => {
 
   console.log('Connected to MongoDB')
 
-  let users = await User.find(
-    {
-      // _id: '59b99de4cfa9a34dcd788617'
-    },
-    'name email',
-  )
+  let users = await User.find({}, 'name email')
 
   const usersObject = users.map(user => {
     const { _id, ...restUser } = user.toObject()
@@ -32,16 +27,6 @@ const processRecords = async () => {
       ...restUser,
     }
   })
-
-  // const user = usersObject[0]
-
-  // await client.partialUpdateObject({
-  //   indexName: 'users_index',
-  //   objectID: user.objectID,
-  //   attributesToUpdate: {
-  //     password: '123456',
-  //   },
-  // })
 
   return await client.saveObjects({
     indexName: 'users_index',
