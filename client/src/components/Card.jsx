@@ -1,4 +1,4 @@
-import { deleteDoc } from '@/actions/addDoc'
+import { deleteDoc } from '@/actions/'
 import { Highlight } from 'react-instantsearch'
 import Link from 'next/link'
 
