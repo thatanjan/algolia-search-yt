@@ -29,7 +29,7 @@ const processRecords = async () => {
   })
 
   return await client.saveObjects({
-    indexName: 'users_index',
+    indexName: 'users_index_yt',
     objects: usersObject,
   })
 }

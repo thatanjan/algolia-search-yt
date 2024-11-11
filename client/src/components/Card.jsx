@@ -10,7 +10,6 @@ const Card = ({ hit }) => {
       <div className='card bg-base-100 w-96 shadow-xl'>
         <div className='card-body'>
           <h2 className='card-title'>
-            {/* {name} */}
             <Highlight attribute='name' hit={hit} />
           </h2>
           <p>
